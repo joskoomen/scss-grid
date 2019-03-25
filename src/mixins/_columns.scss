@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+@mixin grid-column($count) {
+  flex: 0 0 auto;
+  flex-basis: grid-column-percentage($count);
+  max-width: grid-column-percentage($count);
+  box-sizing: border-box;
+}

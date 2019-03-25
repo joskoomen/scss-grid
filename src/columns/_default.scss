@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-columns-default() {
+  
+  @each $classname in $breakpoint-classes {
+    $class: $classname;
+    
+    @include breakpoint($classname) {
+      @if ($class == $classname) {
+        .#{$grid-class-column}-#{$classname} {
+          flex-grow: 1;
+          flex-basis: 0;
+          max-width: 100%;
+        }
+      }
+    }
+    
+  }
+}

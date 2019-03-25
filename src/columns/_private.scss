@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@mixin -joskoomen-grid-columns-positioning-horiziontal($map, $classname, $text-align : true) {
+  @each $map-value in $map {
+    $class-prefix: nth($map-value, 1);
+    $justify-content: nth($map-value, 2);
+    .#{$classname}-x-#{$class-prefix} {
+      justify-content: $justify-content;
+      @if $text-align == true {
+        text-align: $class-prefix;
+      }
+    }
+  }
+}
+
+@mixin -joskoomen-grid-columns-positioning-vertical($map, $classname) {
+  @each $map-value in $map {
+    $class-prefix: nth($map-value, 1);
+    $align-items: nth($map-value, 2);
+    
+    .#{$classname}-y-#{$class-prefix} {
+      align-items: $align-items;
+    }
+  }
+  
+}
+
+@mixin -joskoomen-grid-ordering($classname) {
+  .#{$classname}-order-first {
+    order: -1;
+  }
+  .#{$classname}-order-last {
+    order: 1;
+  }
+}

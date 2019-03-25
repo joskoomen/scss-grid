@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@mixin grid-position-x($value, $justify-content-prefix, $text-align : true) {
+  
+  @if $justify-content-prefix == '' {
+    justify-content: $value;
+  } @else {
+    justify-content: #{$justify-content-prefix}-#{$value};
+  }
+  
+  @if $text-align == true {
+    text-align: $text-align;
+  }
+  
+}
+
+@mixin grid-position-y($align-items-value) {
+  align-items: $align-items-value;
+}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-columns-reverse() {
+  
+  .#{$grid-class-column}.reverse {
+    flex-direction: column-reverse;
+  }
+  
+  @each $classname in $breakpoint-classes {
+    $class: $classname;
+    
+    @include breakpoint($classname) {
+      @if ($class == $classname) {
+        .#{$grid-class-column}-#{$classname}.reverse {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+}

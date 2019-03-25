@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-container-sized() {
+  
+  @each $size in $grid-container-sizes {
+    $classname: nth($size, 1);
+    $value: nth($size, 2);
+    
+    .#{$grid-class-container}-#{$classname} {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: rem-calc($value);
+    }
+  }
+}

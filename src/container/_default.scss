@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-container-default() {
+  
+  
+  .#{$grid-class-container} {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $global-max-width;
+  }
+  
+}

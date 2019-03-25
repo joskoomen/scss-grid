@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+@function grid-column-percentage($count) {
+  @return #{unitless-calc($count / $grid-columns-count)* 100}#{'%'};
+}

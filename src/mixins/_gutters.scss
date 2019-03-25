@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+@mixin grid-column-gutter($gutter_padding) {
+  padding-left: grid-half-gutter-value($gutter_padding);
+  padding-right: grid-half-gutter-value($gutter_padding);
+}

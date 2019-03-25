@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@import "config/classes";
+@import "config/container";
+@import "config/columns";
+@import "config/spacings";
+//
+@import "functions/columns";
+@import "functions/gutters";
+//
+@import "mixins/columns";
+@import "mixins/gutters";
+@import "mixins/positioning";
+//
+@import "container/default";
+@import "container/fluid";
+@import "container/sized";
+@import "row/default";
+@import "row/reverse";
+@import "columns/private";
+@import "columns/default";
+@import "columns/reverse";
+@import "columns/count";
+@import "columns/offset";
+@import "columns/positioning";
+
+@mixin joskoomen-grid() {
+  @include joskoomen-grid-container-default();
+  @include joskoomen-grid-container-fluid();
+  @include joskoomen-grid-container-sized();
+  //
+  @include joskoomen-grid-row-default();
+  @include joskoomen-grid-row-reverse();
+  //
+  @include joskoomen-grid-columns-default();
+  @include joskoomen-grid-columns-reverse();
+  @include joskoomen-grid-columns-count();
+  @include joskoomen-grid-columns-offset();
+  @include joskoomen-grid-columns-positioning();
+}

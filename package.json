@@ -1,0 +1,27 @@
+{
+  "name": "@joskoomen/scss-grid",
+  "version": "1.0.0",
+  "description": "Flexbox grid System",
+  "main": "src/_index.scss",
+  "author": "Jos Koomen <hello@joskoo.men>",
+  "license": "MIT",
+  "dependencies": {
+    "@joskoomen/scss-core": "^1.*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joskoomen/scss-grid.git"
+  },
+  "keywords": [
+    "core",
+    "boilerplate",
+	"grid",
+    "joskoomen",
+    "flexbox",
+    "scss"
+  ],
+  "homepage": "https://github.com/joskoomen/scss-grid"
+}

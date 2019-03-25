@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+$grid-container-sizes: (
+    'sm' : map_get($breakpoints, 'sm'),
+    'md' : map_get($breakpoints, 'md'),
+    'lg' : map_get($breakpoints, 'lg'),
+    'xl' : map_get($breakpoints, 'xl')
+) !default;

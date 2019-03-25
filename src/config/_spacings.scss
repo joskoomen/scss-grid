@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+$grid-default-outer-margin: (
+    'xs' : 0,
+    'md': 10px,
+    'lg': 20px
+) !default;
+
+$grid-default-gutter-width: (
+    'xs' : 10px,
+    'md': 20px,
+    'lg': 30px
+) !default;
+
+@if not map-has-key($grid-default-outer-margin, $-jk-zero-breakpoint) {
+  @error 'In $grid-default-outer-margin, you must have at least a value for the "#{$-jk-zero-breakpoint}" breakpoint.';
+}
+
+@if not map-has-key($grid-default-gutter-width, $-jk-zero-breakpoint) {
+  @error 'In $grid-default-gutter-width, you must have at least a gutter size for the "#{$-jk-zero-breakpoint}" breakpoint.';
+}

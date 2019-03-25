@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+@function grid-half-gutter-value($padding-value) {
+  @return rem-calc($padding-value * 0.5);
+}

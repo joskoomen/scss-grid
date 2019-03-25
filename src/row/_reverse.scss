@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-row-reverse() {
+  
+  .#{$grid-class-row}.reverse {
+    flex-direction: row-reverse;
+  }
+  
+}

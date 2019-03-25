@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-row-default() {
+  
+  .#{$grid-class-row} {
+    display: flex;
+    box-sizing: border-box;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  $gutterclass: $-jk-zero-breakpoint;
+  @each $classname in $breakpoint-classes {
+    @if map_has_key($grid-default-gutter-width, $classname) {
+      @include breakpoint($classname) {
+        .#{$grid-class-row} .#{$grid-class-row} {
+          $gutterclass: $classname;
+          margin-left: (rem-calc(map_get($grid-default-gutter-width, $gutterclass) * 0.5) * -1);
+          margin-right: (rem-calc(map_get($grid-default-gutter-width, $gutterclass) * 0.5) * -1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-columns-positioning() {
+  $horizontal: (
+      start : flex-start,
+      center : center,
+      end : flex-end
+  );
+  $vertical: (
+      top : flex-start,
+      middle : center,
+      bottom : flex-end
+  );
+  $spacing: (
+      around : space-around,
+      between : space-between
+  );
+  
+  @each $classname in $breakpoint-classes {
+    @include breakpoint($classname) {
+      @include -joskoomen-grid-columns-positioning-horiziontal($horizontal, $classname);
+      @include -joskoomen-grid-columns-positioning-vertical($vertical, $classname);
+      @include -joskoomen-grid-columns-positioning-horiziontal($spacing, $classname, false);
+      @include -joskoomen-grid-ordering($classname);
+    }
+  }
+}
+

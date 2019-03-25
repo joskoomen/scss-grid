@@ -16,16 +16,16 @@ Based on: http://flexboxgrid.com/
 
 ## columns
 
-* `.xs-col // 100% width with flex-grow for auto sizing`
-* `.sm-col //100% width with flex-grow for auto sizing`
-* `.md-col //100% width with flex-grow for auto sizing`
-* `.lg-col //100% width with flex-grow for auto sizing`
-* `.xl-col //100% width with flex-grow for auto sizing`
-* `.xs-col-1 //untill 12 or other value based on $grid-columns-count`
-* `.sm-col-1 //untill 12 or other value based on $grid-columns-count`
-* `.md-col-1 //untill 12 or other value based on $grid-columns-count`
-* `.lg-col-1 //untill 12 or other value based on $grid-columns-count`
-* `.xl-col-1 //untill 12 or other value based on $grid-columns-count`
+* `.col-xs // 100% width with flex-grow for auto sizing`
+* `.col-ms //100% width with flex-grow for auto sizing`
+* `.col-md //100% width with flex-grow for auto sizing`
+* `.col-lg //100% width with flex-grow for auto sizing`
+* `.col-xl //100% width with flex-grow for auto sizing`
+* `.col-xs-1 //untill 12 or other value based on $grid-columns-count`
+* `.col-sm-1 //untill 12 or other value based on $grid-columns-count`
+* `.col-md-1 //untill 12 or other value based on $grid-columns-count`
+* `.col-lg-1 //untill 12 or other value based on $grid-columns-count`
+* `.col-xl-1 //untill 12 or other value based on $grid-columns-count`
 
 ## justify alignment
 

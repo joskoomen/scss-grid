@@ -3,8 +3,7 @@
 @mixin joskoomen-grid-columns-count() {
   
   @each $classname in $breakpoint-classes {
-    // gutter map class is default the zero breakpoint (xs by default)
-    
+
     @include breakpoint($classname) {
       @for $i from 1 through $grid-columns-count {
         

@@ -23,6 +23,7 @@
 @import "columns/count";
 @import "columns/offset";
 @import "columns/positioning";
+@import "columns/gutters";
 
 @mixin joskoomen-grid() {
   @include joskoomen-grid-container-default();
@@ -37,4 +38,6 @@
   @include joskoomen-grid-columns-count();
   @include joskoomen-grid-columns-offset();
   @include joskoomen-grid-columns-positioning();
+  //
+  @include joskoomen-grid-gutters();
 }

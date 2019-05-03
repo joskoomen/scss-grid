@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@mixin joskoomen-grid-gutters() {
+
+  $gutterclass: $-jk-zero-breakpoint;
+  @each $classname in $breakpoint-classes {
+    @if map_has_key($grid-default-gutter-width, $classname) {
+      $gutterclass: $classname;
+    }
+
+    @include breakpoint($classname) {
+      @for $i from 1 through $grid-columns-count {
+        @each $class in $breakpoint-classes {
+          .#{$grid-class-column}-#{$class}-#{$i} {
+            $gutterclass: $classname;
+            @include grid-column-gutter(map_get($grid-default-gutter-width, $gutterclass));
+          }
+        }
+      }
+    }
+  }
+}

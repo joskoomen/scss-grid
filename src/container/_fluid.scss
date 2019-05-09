@@ -2,23 +2,35 @@
 
 @mixin joskoomen-grid-container-fluid() {
   
-  @each $margin in $grid-default-outer-margin {
-    $key: nth($margin, 1);
-    $value: nth($margin, 2);
+  $marginclass: $-jk-zero-breakpoint;
+  $value: map_get($grid-default-outer-margin, $-jk-zero-breakpoint);
+  $guttervalue: map_get($grid-default-gutter-width, $-jk-zero-breakpoint);
+  
+  @each $classname in $breakpoint-classes {
+    @if map_has_key($grid-default-outer-margin, $classname) {
+      $marginclass: $classname;
+      $value: map_get($grid-default-outer-margin, $classname);
+    }
+    @if map_has_key($grid-default-gutter-width, $classname) {
+      $guttervalue: grid-half-gutter-value(map_get($grid-default-gutter-width, $classname));
+    }
     
-    @if ($key == $-jk-zero-breakpoint) {
+    @if ($classname == $-jk-zero-breakpoint) {
       .#{$grid-class-container-fluid} {
         margin-right: auto;
         margin-left: auto;
-        padding-left: rem-calc($value);
-        padding-right: rem-calc($value);
       }
-    } @else {
-      
-      @include breakpoint($key) {
+    }
+    
+    @include breakpoint($classname) {
+      @each $margin in $grid-default-outer-margin {
         .#{$grid-class-container-fluid} {
-          padding-left: $value;
-          padding-right: $value;
+          $paddingvalue: rem-calc($value) - rem-calc($guttervalue);
+          @if (unitless-calc($paddingvalue) < 0) {
+            $paddingvalue: 0;
+          }
+          padding-left: rem-calc($paddingvalue);
+          padding-right: rem-calc($paddingvalue);
         }
       }
     }

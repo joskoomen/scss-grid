@@ -14,12 +14,23 @@
 //    'xl' : map_get($breakpoints, 'xl')
 //  );
 
+/**
+ * Padding value on the `container-fluid`.
+ * Keep in mind that we calculate the gutter width
+ * and extract half of the `$grid-default-gutter-width` from this value.
+ * Negative values (< 0) will result in a 0 value.
+ * Depends on the `$breakpoint-classes`
+ */
 //  $grid-default-outer-margin: (
 //      'xs' : 0,
 //      'md': 10px,
 //      'lg': 20px
 //  );
 
+/**
+ * Mobile first gutter sizes
+ * Depends on the `$breakpoint-classes`
+ */
 //  $grid-default-gutter-width: (
 //      'xs' : 10px,
 //      'md': 20px,

@@ -11,7 +11,7 @@
     @include breakpoint($classname) {
       @for $i from 1 through $grid-columns-count {
         @each $class in $breakpoint-classes {
-          .#{$grid-class-column}-#{$class}-#{$i} {
+          .#{$class}-#{$grid-class-column}-#{$i} {
             @include grid-column-gutter(map_get($grid-default-gutter-width, $gutterclass));
           }
         }

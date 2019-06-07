@@ -11,7 +11,7 @@
     
     @include breakpoint($classname) {
       @if ($class == $classname) {
-        .#{$grid-class-column}-#{$classname}.reverse {
+        .#{$classname}-#{$grid-class-column}.reverse {
           flex-direction: column-reverse;
         }
       }

@@ -6,7 +6,7 @@
     
     @include breakpoint($classname) {
       @for $i from 1 through ($grid-columns-count - 1) {
-        .#{$grid-class-column}-#{$classname}-offset-#{$i} {
+        .#{$classname}-#{$grid-class-column}-offset-#{$i} {
           margin-left: grid-column-percentage($i);
         }
       }

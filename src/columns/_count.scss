@@ -7,7 +7,7 @@
     @include breakpoint($classname) {
       @for $i from 1 through $grid-columns-count {
         
-        .#{$grid-class-column}-#{$classname}-#{$i} {
+        .#{$classname}-#{$grid-class-column}-#{$i} {
           @include grid-column($i);
         }
       }

@@ -2,33 +2,40 @@
 
 @mixin joskoomen-grid-container-fluid() {
   
+  .#{$grid-class-container-fluid} {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
   $marginclass: $-jk-zero-breakpoint;
   $value: map_get($grid-default-outer-margin, $-jk-zero-breakpoint);
   $guttervalue: map_get($grid-default-gutter-width, $-jk-zero-breakpoint);
+  $paddingvalue:0;
+  $updated-outer-margin: false;
+  $updated-gutter-width: false;
   
   @each $classname in $breakpoint-classes {
+    $updated-outer-margin: false;
+    $updated-gutter-width: false;
     @if map_has_key($grid-default-outer-margin, $classname) {
+      $updated-outer-margin: true;
       $marginclass: $classname;
       $value: map_get($grid-default-outer-margin, $classname);
     }
     @if map_has_key($grid-default-gutter-width, $classname) {
+      $updated-gutter-width: true;
       $guttervalue: grid-half-gutter-value(map_get($grid-default-gutter-width, $classname));
     }
     
-    @if ($classname == $-jk-zero-breakpoint) {
-      .#{$grid-class-container-fluid} {
-        margin-right: auto;
-        margin-left: auto;
-      }
-    }
-    
-    @include breakpoint($classname) {
-      @each $margin in $grid-default-outer-margin {
-        .#{$grid-class-container-fluid} {
+    @if ($updated-outer-margin or $updated-gutter-width) {
+      @include breakpoint($classname) {
+        @each $margin in $grid-default-outer-margin {
           $paddingvalue: rem-calc($value) - rem-calc($guttervalue);
           @if (unitless-calc($paddingvalue) < 0) {
             $paddingvalue: 0;
           }
+        }
+        .#{$grid-class-container-fluid} {
           padding-left: rem-calc($paddingvalue);
           padding-right: rem-calc($paddingvalue);
         }
